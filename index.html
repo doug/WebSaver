@@ -1,0 +1,621 @@
+<!doctype html>
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title></title>
+
+	<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	html, body {
+		height: 100%;
+		background-color: #000;
+	}
+	#container {
+		width: 500px;
+		height: 500px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -250px;
+		margin-left: -250px;
+	}
+	</style>
+
+	<script type="text/javascript" src="http://github.com/georgealways/gee/raw/master/build/gee.min.js"></script>
+	<script type="text/javascript">
+	var DAT = DAT || {};
+
+DAT.logo = function( params ) {
+	
+	/**
+	 * Default parameters
+	 */
+	
+	if ( params['container'] == undefined ) {
+		return;
+	}
+	
+	if ( params['interactive'] == undefined ) {
+		params['interactive'] = false;
+	}
+	
+	if ( params['ambient'] == undefined ) {
+		params['ambient'] = false;
+	}
+	
+	if ( params['ambientInterval'] == undefined ) {
+		params['ambientInterval'] = 3800;
+	}
+	
+	if ( params['invert'] == undefined ) {
+		params['invert'] = false;
+	}
+	
+	if ( params['monochrome'] == undefined ) {
+		params['monochrome'] = false;
+	}
+	
+	if ( params['gradient'] == undefined) {
+		params['gradient'] = false;
+	}
+	
+	/**
+	 * Constants
+	 */
+	
+	var boxSize = params['size'] || container.offsetWidth;
+	var sqTwo = Math.sqrt(2);
+	var gap = boxSize*(sqTwo - 1)/2;
+	var easing = 0.1;
+	var longest = sqTwo*boxSize;
+	
+	/**
+	 * Geometry
+	 */
+	
+	var topLeft = { x: gap, y: gap };
+	var topRight = { x: gap + boxSize, y: gap };
+	var bottomLeft = { x: gap, y: boxSize + gap };
+	var bottomRight = { x: gap + boxSize, y: boxSize + gap };
+	
+	var top = { a: topLeft, b: topRight };
+	var left = { a: topLeft, b: bottomLeft };
+	var bottom = { a: bottomLeft, b: bottomRight };
+	var right = { a: topRight, b: bottomRight };
+
+	var points = [topLeft, topRight, bottomRight, bottomLeft ];
+	var sides = [top, left, bottom, right];
+	
+	var foldPoint = { x: 0, y: 0 };
+	var foldPointTarget = { x: 0, y: 0 };
+
+	/**
+	 * Ambient Ghost
+	 */
+	
+	var ambient = new function() {
+	
+		// Pass sides to this function as arguments to exclude them from
+		// the lottery
+		var randomSide = function() {
+			var index = Math.round(Math.random()*(sides.length-1));	
+			sides[index];
+		}
+	
+		var lastSide = randomSide();
+		var targetSide;
+	
+	};
+
+	/**
+	 * Color
+	 */
+	
+	var foldColors = [];
+	
+	if ( !params['monochrome'] ) {
+	
+		for (var i = 0; i < DAT.Color.PALLETTE.length; i++) {
+			foldColors.push(DAT.Color.PALLETTE[i]);
+		}
+		
+	}	
+	
+	var currentFoldColor = [0,0,0];
+	var background = params[ 'invert' ] ? DAT.Color.FOREGROUND : DAT.Color.BACKGROUND;
+	var foreground = !params[ 'invert' ] ? DAT.Color.FOREGROUND : DAT.Color.BACKGROUND;
+	foldColors.push( !params[ 'invert' ] ? DAT.Color.FOREGROUND : DAT.Color.BACKGROUND );
+	
+	/**
+	 * ... and finally, let's make a GEE!
+	 */
+	
+	var g = new GEE({ container: params['container'], width: boxSize*sqTwo, height: boxSize*sqTwo });
+	g.domElement.style.margin = -gap+'px';
+	
+	var mouseOver = false;
+	
+	// No fuzzy edges.
+	if ( boxSize % 2 != 0) {
+		g.ctx.translate(-0.5, -0.5);
+	}
+	
+	g.mouseover = function() {
+		mouseOver = true;
+	}
+	
+	g.mouseout = function() {
+		mouseOver = false;
+	}
+	
+	g.draw = function() {
+		
+		var polyFold = [];
+		var polyFlat = [];
+		
+		g.ctx.clearRect(0, 0, g.width, g.height);
+		
+		if ( params['ambient'] ) {
+			//
+		}
+		
+		if ( params['interactive'] ) {
+		
+			if ( params['ambient'] && !mouseOver ) {
+		
+			} else {
+			
+				foldPointTarget.x = g.mouseX;
+				foldPointTarget.y = g.mouseY;
+				
+			}
+			
+		} else if ( !params['ambient'] ) {
+		
+			//foldPoint.x = foldPointTarget.x = randomFoldTarget.x;
+			//foldPoint.y = foldPointTarget.y = randomFoldTarget.y;
+			
+		}
+		
+		// Make crease
+		
+		foldPoint.x += (foldPointTarget.x - foldPoint.x)*easing;
+		foldPoint.y += (foldPointTarget.y - foldPoint.y)*easing;
+		
+		var angle = Math.atan2(foldPoint.y - g.height/2, foldPoint.x - g.width/2);
+		var perp = angle + Math.PI/2;
+		
+		var ax = foldPoint.x + Math.cos(perp)*longest;
+		var ay = foldPoint.y + Math.sin(perp)*longest;
+		
+		var bx = foldPoint.x - Math.cos(perp)*longest;
+		var by = foldPoint.y - Math.sin(perp)*longest;
+		
+		var fold = { a: { x: ax, y: ay },
+					 b: { x: bx, y: by } };
+					 
+		var result = [];
+		
+		// Slice paper
+		
+		linesIntersect(top, fold, result);
+		linesIntersect(bottom, fold, result);
+		linesIntersect(left, fold, result);
+		linesIntersect(right, fold, result);
+	
+		for (var i = 0; i < result.length; i++) {
+		
+			var intersection = result[i];
+			polyFold.push( { x: intersection.x, y: intersection.y } );
+			polyFlat.push( { x: intersection.x, y: intersection.y } );
+			
+		}
+		
+		// Did we actually make any folds?
+		
+		if ( result.length == 2 ) {
+		
+			var side1 = result[0].line;
+			var side2 = result[1].line;
+		
+			var shared = sharedPoint(side1, side2);
+		
+			// Fold resulted in a triangle ...
+		
+			if ( shared !== false ) {
+			
+				polyFold.push( { x: shared.x, y: shared.y } );
+				
+				// Ensures clockwise winding
+				if (shared == topLeft || shared == bottomRight) {
+					polyFlat.unshift(polyFlat.pop());
+				}
+				
+				for (var i = 0; i < 3; i++) {
+					var j = i + points.indexOf(shared)+1;
+					j %= points.length;
+					polyFlat.push(points[j]);
+					
+				}
+			
+			// Fold resulted in a quad ...
+			
+			} else { 
+			
+				var notIntersecting = [];
+				
+				for (var i = 0; i < sides.length; i++) {
+					if (sides[i] != side1 && sides[i] != side2) {
+						notIntersecting.push(sides[i]);
+					}
+				}
+				
+				var d1 = minimumDistance(foldPoint, notIntersecting[0]);
+				var d2 = minimumDistance(foldPoint, notIntersecting[1]);
+			
+				if (d1 > d2) {					
+				
+					polyFold.push( { x: notIntersecting[1].b.x, y: notIntersecting[1].b.y } );
+					polyFold.push( { x: notIntersecting[1].a.x, y: notIntersecting[1].a.y } );
+					
+					polyFlat.push( { x: notIntersecting[0].b.x, y: notIntersecting[0].b.y } );
+					polyFlat.push( { x: notIntersecting[0].a.x, y: notIntersecting[0].a.y } );
+					
+				} else { 
+				
+					polyFold.push( { x: notIntersecting[0].b.x, y: notIntersecting[0].b.y } );
+					polyFold.push( { x: notIntersecting[0].a.x, y: notIntersecting[0].a.y } );
+					
+					polyFlat.push( { x: notIntersecting[1].b.x, y: notIntersecting[1].b.y } );
+					polyFlat.push( { x: notIntersecting[1].a.x, y: notIntersecting[1].a.y } );
+	
+				}
+					
+			}
+			
+			// Now draw the damned thing.
+			
+			g.ctx.save();
+			g.ctx.beginPath();
+			g.ctx.moveTo(polyFlat[0].x, polyFlat[0].y);
+			
+			for (var i = 1; i < polyFlat.length; i++) {
+				g.ctx.lineTo(polyFlat[i].x, polyFlat[i].y);
+			}
+			
+			g.ctx.clip();
+			
+			g.ctx.fillStyle = DAT.Color.rgba(background);
+			g.ctx.fillRect(gap, gap, boxSize, boxSize);
+			g.ctx.fillStyle = DAT.Color.rgba(foreground);
+			drawType();
+		
+			g.ctx.restore();
+	
+			var mid = midPoint(fold);
+			for (var i = 0; i < polyFold.length; i++) {
+				polyFold[i] = diff(polyFold[i], mid);
+			}
+			
+			g.ctx.save();
+			
+			
+			g.ctx.save();
+			
+				// Reflect over the axis of the crease.
+				var m = Math.tan(angle);
+				var c = -1/(m*m+1);
+				g.ctx.setTransform(c*(1-m*m), c*(2*m), c*(2*m), c*(m*m-1), mid.x+Math.cos(angle), mid.y+Math.sin(angle)/2);
+				
+				// Define the fold as our clipping plane
+				g.ctx.beginPath();
+				g.ctx.moveTo(polyFold[0].x, polyFold[0].y);
+				for (var i = 1; i < polyFold.length; i++) {
+					g.ctx.lineTo(polyFold[i].x, polyFold[i].y);
+				}
+				g.ctx.clip();
+				
+				// What color is the fold?
+				var colorIndex = Math.floor((angle + Math.PI)/(2*Math.PI)*foldColors.length);
+				var foldTargetColor = foldColors[colorIndex];
+				var colorEasing = ( !params['ambient'] && !params['interactive'] ) ? 1 : easing/2;
+				currentFoldColor[0] += (foldTargetColor[0] - currentFoldColor[0])*colorEasing;
+				currentFoldColor[1] += (foldTargetColor[1] - currentFoldColor[1])*colorEasing;
+				currentFoldColor[2] += (foldTargetColor[2] - currentFoldColor[2])*colorEasing;
+				
+				// Does the fold have that lil gradient?
+				if ( params['gradient'] ) {
+					
+					if (colorIndex == foldColors.length - 1) {
+						var accent = DAT.Color.rgb2hsv(currentFoldColor);
+						accent[2] -= 0.5;
+						accent = DAT.Color.hsv2rgb(accent);
+					} else { 
+						var accent = DAT.Color.rgb2hsv(currentFoldColor);
+						accent[0] -= 0.17;
+						accent = DAT.Color.hsv2rgb(accent);
+					}
+					
+				}
+				
+				// Draw the typography
+				g.ctx.save();
+					g.ctx.translate(-mid.x, -mid.y);
+					g.ctx.fillStyle = DAT.Color.rgba(currentFoldColor, 0.95);
+					g.ctx.fillRect(gap, gap, boxSize, boxSize);
+					g.ctx.fillStyle = '#fff';
+					drawType();
+				g.ctx.restore();
+				
+				if ( params['gradient'] ) {
+					
+					var h = boxSize/5;
+					
+					var lingrad = g.ctx.createLinearGradient(0,0,0,h);
+					lingrad.addColorStop(0, DAT.Color.rgba(accent, 0.5));
+					lingrad.addColorStop(1, DAT.Color.rgba(accent, 0));
+					
+					g.ctx.fillStyle = lingrad;
+					g.ctx.rotate(perp+Math.PI);
+					g.ctx.fillRect(-longest/2, 0, longest, h);
+					
+				}
+				
+			g.ctx.restore();
+			
+			
+			
+		} else { 
+		
+			g.ctx.fillStyle = DAT.Color.rgba(background);
+			g.ctx.fillRect(gap, gap, boxSize, boxSize);
+			g.ctx.fillStyle = DAT.Color.rgba(foreground);
+			drawType();
+			
+		}
+		
+		
+		
+	}
+	
+	var sharedPoint = function(a, b) {
+		if ( a.a == b.a ) {
+			return a.a;
+		} else if ( a.a == b.b ) { 
+			return a.a;
+		} else if ( a.b == b.a ) {
+			return a.b;
+		} else if ( a.b == b.b ) {
+			return b.b;
+		} else {
+			return false;
+		}
+	}
+	
+	var midPoint = function(line) {
+		return { x: line.a.x/2 + line.b.x/2, y: line.a.y/2 + line.b.y/2 };
+	}
+	
+	var circle = function(x, y, r) {
+		g.ctx.beginPath();
+		g.ctx.arc(x, y, r, 0, Math.PI*2, false);
+		g.ctx.stroke();
+	}
+	
+	var sign = function(num) {
+		if (num >= 0) {
+			return 1;
+		} else { 	
+			return 0;
+		}
+	}
+	
+	var minimumDistance = function(point, line) {
+	  var l2 = lengthSquared(line.a, line.b); 
+	  if (l2 == 0) return distance(point, line.a);
+	  var t = dot(diff(point, line.a), diff(line.b, line.a)) / l2;		  
+	  if (t < 0) 
+		return distance(point, line.a);     
+	  else if (t > 1)
+		return distance(point, line.b); 
+	  var projection = add(mult(diff(line.b, line.a), t), line.a);
+	  return distance(point, projection);
+	}
+	
+	var lengthSquared = function(a, b) {
+		return Math.pow(a.x-b.x, 2) + Math.pow(a.y-b.y, 2);
+	}
+	
+	var distance = function(a, b) {
+		return Math.sqrt(lengthSquared(a, b));
+	}
+	
+	var dot = function(a, b) {
+		return a.x*b.x + a.y*b.y;
+	}
+	
+	var add = function(a, b) {
+		return { x: a.x+b.x, y: a.y + b.y }
+	}
+	
+	var diff = function(a, b) {
+		return { x: a.x-b.x,
+				 y: a.y-b.y };
+	}
+	
+	var mult = function(a, s) {
+		return { x: a.x*s, y: a.y*s };
+	}
+	
+	var linesIntersect = function(a, b, resultArray) {
+	
+		var result;
+		
+		var ua_t = (b.b.x - b.a.x) * (a.a.y - b.a.y) - (b.b.y - b.a.y) * (a.a.x - b.a.x);
+		var ub_t = (a.b.x - a.a.x) * (a.a.y - b.a.y) - (a.b.y - a.a.y) * (a.a.x - b.a.x);
+		var u_b  = (b.b.y - b.a.y) * (a.b.x - a.a.x) - (b.b.x - b.a.x) * (a.b.y - a.a.y);
+	
+		if ( u_b != 0 ) {
+			var ua = ua_t / u_b;
+			var ub = ub_t / u_b;
+	
+			if ( 0 <= ua && ua <= 1 && 0 <= ub && ub <= 1 ) {
+				resultArray.push( { x: a.a.x + ua * (a.b.x - a.a.x),
+							   y: a.a.y + ua * (a.b.y - a.a.y),
+							   line: a } );
+			} 
+			
+		}
+		
+	};
+
+	var drawType = function() {
+	
+		g.ctx.save();
+		g.ctx.translate(g.width/2, g.height/2);
+		g.ctx.scale(boxSize, boxSize);
+		g.ctx.beginPath();	
+		g.ctx.moveTo(-0.2918918918918919,-0.12972972972972974);
+		g.ctx.lineTo(-0.20727027027027026,-0.12972972972972974);
+		g.ctx.bezierCurveTo(-0.16160540540540538,-0.12972972972972974,-0.12482162162162161,-0.09294594594594595,-0.12482162162162161,-0.04728108108108108);
+		g.ctx.lineTo(-0.12482162162162161,0.06416216216216215);
+		g.ctx.bezierCurveTo(-0.12482162162162161,0.1098162162162162,-0.16160540540540538,0.1466108108108108,-0.20727027027027026,0.1466108108108108);
+		g.ctx.lineTo(-0.2918918918918919,0.1466108108108108);
+		g.ctx.lineTo(-0.2918918918918919,-0.12972972972972974);
+		g.ctx.moveTo(-0.20727027027027026,0.11689189189189189);
+		g.ctx.bezierCurveTo(-0.17809729729729729,0.11689189189189189,-0.15454054054054053,0.09334054054054054,-0.15454054054054053,0.06416216216216215);
+		g.ctx.lineTo(-0.15454054054054053,-0.04728108108108108);
+		g.ctx.bezierCurveTo(-0.15454054054054053,-0.07645405405405406,-0.17809729729729726,-0.10001621621621622,-0.20727027027027026,-0.10001621621621622);
+		g.ctx.lineTo(-0.26217297297297293,-0.10001621621621622);
+		g.ctx.lineTo(-0.26217297297297293,0.11689189189189189);
+		g.ctx.lineTo(-0.20727027027027026,0.11689189189189189);
+		g.ctx.moveTo(0.0008378378378378379,-0.12972972972972974);
+		g.ctx.lineTo(0.032010810810810815,-0.12972972972972974);
+		g.ctx.lineTo(0.11428108108108109,0.1466108108108108);
+		g.ctx.lineTo(0.08421081081081083,0.1466108108108108);
+		g.ctx.lineTo(0.061556756756756786,0.0694162162162162);
+		g.ctx.lineTo(-0.02887567567567565,0.0694162162162162);
+		g.ctx.lineTo(-0.05134594594594592,0.1466108108108108);
+		g.ctx.lineTo(-0.0814216216216216,0.1466108108108108);
+		g.ctx.lineTo(0.0008378378378378379,-0.12972972972972974);
+		g.ctx.moveTo(0.05284324324324324,0.0396972972972973);
+		g.ctx.lineTo(0.016427027027027027,-0.08515675675675675);
+		g.ctx.lineTo(-0.020172972972972974,0.0396972972972973);
+		g.ctx.lineTo(0.05284324324324324,0.0396972972972973);
+		g.ctx.moveTo(0.20515135135135137,-0.11777297297297297);
+		g.ctx.lineTo(0.12378918918918919,-0.11777297297297297);
+		g.ctx.lineTo(0.12378918918918919,-0.12972972972972974);
+		g.ctx.lineTo(0.2984702702702703,-0.12972972972972974);
+		g.ctx.lineTo(0.2984702702702703,-0.11777297297297297);
+		g.ctx.lineTo(0.2171081081081081,-0.11777297297297297);
+		g.ctx.lineTo(0.2171081081081081,0.14661081081081082);
+		g.ctx.lineTo(0.20514594594594593,0.14661081081081082);
+		g.ctx.lineTo(0.20515135135135137,-0.11777297297297297);
+		g.ctx.lineTo(0.20515135135135137,-0.11777297297297297);
+		g.ctx.fill();
+		g.ctx.restore();
+		
+	}
+
+}
+
+DAT.Color = {};
+
+DAT.Color.rgba = function(color, opacity) {
+	var c = [];
+	for (var i = 0; i < color.length; i++) {
+		c[i] = Math.round(color[i]);
+	}
+	if ( opacity != undefined ) { 
+		return 'rgba('+c.join(',')+','+opacity+')';
+	} else { 
+		return 'rgb('+c.join(',')+')';
+	}
+}
+
+DAT.Color.rgb2hsv = function(color) {  
+	var r = color[0];
+	var g = color[1];
+	var b = color[2];
+	r /= 255, g /= 255, b /= 255;
+    var max = Math.max(r, g, b), min = Math.min(r, g, b);
+    var h, s, l = (max + min) / 2;
+
+    if ( max == min ){
+        h = s = 0; // achromatic
+    } else {
+        var d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch(max){
+            case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+            case g: h = (b - r) / d + 2; break;
+            case b: h = (r - g) / d + 4; break;
+        }
+        h /= 6;
+    }
+    return [h, s, l];
+}
+
+DAT.Color.hsv2rgb = function(color) {
+	var h = color[0];
+	var s = color[1];
+	var l = color[2];
+	var r, g, b;
+
+    if(s == 0){
+        r = g = b = l; // achromatic
+    }else{
+        function hue2rgb(p, q, t){
+            if(t < 0) t += 1;
+            if(t > 1) t -= 1;
+            if(t < 1/6) return p + (q - p) * 6 * t;
+            if(t < 1/2) return q;
+            if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+            return p;
+        }
+
+        var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        var p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1/3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1/3);
+    }
+
+    return [r * 255, g * 255, b * 255];
+}
+
+DAT.Color.FOREGROUND = [238, 238, 238];
+DAT.Color.BACKGROUND = [38, 38, 38];
+DAT.Color.PALLETTE = [ [212, 20, 90],
+					   [57, 181, 74],
+					   [41, 171, 226] ];
+
+	</script>
+	<script type="text/javascript">
+	window.onload = function() {
+
+		DAT.logo( { container: document.getElementById('container'),
+					invert: true,
+					interactive: true,
+					ambient: true
+					} );
+
+		//
+
+	};
+	</script>
+
+</head>
+<body>
+		<div id="container">
+
+		</div>
+
+</body>
+</html>

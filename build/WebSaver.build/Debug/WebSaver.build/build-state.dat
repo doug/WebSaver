@@ -1,0 +1,324 @@
+TWebSaver
+v7
+r0
+t324549891.246409
+cCheck dependencies
+cProcessInfoPlistFile /Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver/Contents/Info.plist Info.plist
+cCopyStringsFile /Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCpResource build/Debug/WebSaver.saver/Contents/Resources/index.html index.html
+cProcessPCH /var/folders/++/++5rv+++6+0++4RjPqRgNE+-xyk/-Caches-/com.apple.Xcode.129004/SharedPrecompiledHeaders/WebSaver_Prefix-edjxlyschdzsaodspopxmwqjeuhw/WebSaver_Prefix.pch.gch WebSaver_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cProcessPCH /var/folders/++/++5rv+++6+0++4RjPqRgNE+-xyk/-Caches-/com.apple.Xcode.129004/SharedPrecompiledHeaders/WebSaver_Prefix-hglxacbrtlsuqihkjkwtarnlwzdc/WebSaver_Prefix.pch.gch WebSaver_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cProcessPCH /var/folders/++/++5rv+++6+0++4RjPqRgNE+-xyk/-Caches-/com.apple.Xcode.129004/SharedPrecompiledHeaders/WebSaver_Prefix-gxsqwgurcwjcagezcxlyefkkmijb/WebSaver_Prefix.pch.gch WebSaver_Prefix.pch normal ppc objective-c com.apple.compilers.gcc.4_2
+cCompileC build/WebSaver.build/Debug/WebSaver.build/Objects-normal/x86_64/WebSaverView.o /Users/dougfritz/Desktop/WebSaver/WebSaverView.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/x86_64/WebSaver normal x86_64
+cCompileC build/WebSaver.build/Debug/WebSaver.build/Objects-normal/i386/WebSaverView.o /Users/dougfritz/Desktop/WebSaver/WebSaverView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/i386/WebSaver normal i386
+cCompileC build/WebSaver.build/Debug/WebSaver.build/Objects-normal/ppc/WebSaverView.o /Users/dougfritz/Desktop/WebSaver/WebSaverView.m normal ppc objective-c com.apple.compilers.gcc.4_2
+cLd /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/ppc/WebSaver normal ppc
+cCreateUniversalBinary /Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver/Contents/MacOS/WebSaver normal "x86_64 i386 ppc"
+cTouch /Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004CAA740B00000000000000EE
+t1286239243
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h
+c000000004C23BD2900000000000017ED
+t1277410601
+s6125
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004C23AA0400000000000013E6
+t1277405700
+s5094
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/ScreenSaver.framework/Headers/ScreenSaver.h
+c000000004C23D5BC00000000000000B9
+t1277416892
+s185
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.h
+c000000004C23CD6E0000000000000957
+t1277414766
+s2391
+
+N/System/Library/Frameworks/Cocoa.framework/Cocoa
+c000000004D005D57000000000000A5E0
+t1291869527
+s42464
+
+N/System/Library/Frameworks/ScreenSaver.framework/ScreenSaver
+c000000004D005DC300000000000A7940
+t1291869635
+s686400
+
+N/System/Library/Frameworks/WebKit.framework/WebKit
+c000000004D50874D00000000005C2FC0
+t1297123149
+s6041536
+
+N/Users/dougfritz/Desktop/WebSaver/English.lproj/InfoPlist.strings
+c000000004DA8037700000000000000DE
+t1302856567
+s222
+
+N/Users/dougfritz/Desktop/WebSaver/WebSaverView.h
+c000000004DA803E50000000000000118
+t1302856677
+s280
+i<ScreenSaver/ScreenSaver.h>
+i<WebKit/WebKit.h>
+
+N/Users/dougfritz/Desktop/WebSaver/WebSaverView.m
+c000000004DA803C200000000000002E3
+t1302856642
+s739
+i"WebSaverView.h"
+i<WebKit/WebKit.h>
+
+N/Users/dougfritz/Desktop/WebSaver/WebSaver_Prefix.pch
+c000000004DA8037700000000000000BC
+t1302856567
+s188
+i<Foundation/Foundation.h>
+i<AppKit/AppKit.h>
+
+N/Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver
+t1302857005
+s102
+
+N/Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver/Contents/Info.plist
+t1302856700
+s779
+
+N/Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver/Contents/MacOS/WebSaver
+t1302856756
+s46412
+
+N/Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver/Contents/Resources/English.lproj/InfoPlist.strings
+t1302856701
+s222
+
+N/Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver/Contents/Resources/index.html
+t1302857005
+s15978
+
+N/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/i386/WebSaver
+t1302856756
+s13620
+
+N/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/i386/WebSaver.LinkFileList
+c000000004DA803FC000000000000006F
+t1302856700
+s111
+
+N/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/i386/WebSaverView.o
+t1302856711
+s15672
+
+N/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/ppc/WebSaver
+t1302856756
+s13644
+
+N/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/ppc/WebSaver.LinkFileList
+c000000004DA803FC000000000000006E
+t1302856700
+s110
+
+N/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/ppc/WebSaverView.o
+t1302856711
+s16088
+
+N/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/x86_64/WebSaver
+t1302856756
+s10400
+
+N/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/x86_64/WebSaver.LinkFileList
+c000000004DA803FC0000000000000071
+t1302856700
+s113
+
+N/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/x86_64/WebSaverView.o
+t1302856711
+s17956
+
+N/Users/dougfritz/Desktop/WebSaver/index.html
+c000000004DA804FF0000000000003E6A
+t1302856959
+s15978
+
+N/var/folders/++/++5rv+++6+0++4RjPqRgNE+-xyk/-Caches-/com.apple.Xcode.129004/SharedPrecompiledHeaders/WebSaver_Prefix-edjxlyschdzsaodspopxmwqjeuhw/WebSaver_Prefix.pch.gch
+t1302856707
+s53605424
+
+N/var/folders/++/++5rv+++6+0++4RjPqRgNE+-xyk/-Caches-/com.apple.Xcode.129004/SharedPrecompiledHeaders/WebSaver_Prefix-gxsqwgurcwjcagezcxlyefkkmijb/WebSaver_Prefix.pch.gch
+t1302856710
+s52540272
+
+N/var/folders/++/++5rv+++6+0++4RjPqRgNE+-xyk/-Caches-/com.apple.Xcode.129004/SharedPrecompiledHeaders/WebSaver_Prefix-hglxacbrtlsuqihkjkwtarnlwzdc/WebSaver_Prefix.pch.gch
+t1302856707
+s56243280
+
+NInfo.plist
+c000000004DA80377000000000000035E
+t1302856567
+s862
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies324549891#324549891#0(0"0(0#1#0"8613807040#0"0#
+
+CCompileC build/WebSaver.build/Debug/WebSaver.build/Objects-normal/i386/WebSaverView.o /Users/dougfritz/Desktop/WebSaver/WebSaverView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s324549510.703219
+e324549511.084762
+r1
+xCompileC
+xbuild/WebSaver.build/Debug/WebSaver.build/Objects-normal/i386/WebSaverView.o
+x/Users/dougfritz/Desktop/WebSaver/WebSaverView.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@56"Compile /Users/dougfritz/Desktop/WebSaver/WebSaverView.m324549510#324549511#0(0"0(0#0#48"/Users/dougfritz/Desktop/WebSaver/WebSaverView.m8601425728#1080"    cd /Users/dougfritz/Desktop/WebSaver    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/WebSaver.hmap -F/Users/dougfritz/Desktop/WebSaver/build/Debug -I/Users/dougfritz/Desktop/WebSaver/build/Debug/include -I/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/DerivedSources/i386 -I/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/DerivedSources -include /var/folders/++/++5rv+++6+0++4RjPqRgNE+-xyk/-Caches-/com.apple.Xcode.129004/SharedPrecompiledHeaders/WebSaver_Prefix-hglxacbrtlsuqihkjkwtarnlwzdc/WebSaver_Prefix.pch -c /Users/dougfritz/Desktop/WebSaver/WebSaverView.m -o /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/i386/WebSaverView.o0#
+
+CCompileC build/WebSaver.build/Debug/WebSaver.build/Objects-normal/ppc/WebSaverView.o /Users/dougfritz/Desktop/WebSaver/WebSaverView.m normal ppc objective-c com.apple.compilers.gcc.4_2
+s324549511.167832
+e324549511.445800
+r1
+xCompileC
+xbuild/WebSaver.build/Debug/WebSaver.build/Objects-normal/ppc/WebSaverView.o
+x/Users/dougfritz/Desktop/WebSaver/WebSaverView.m
+xnormal
+xppc
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@56"Compile /Users/dougfritz/Desktop/WebSaver/WebSaverView.m324549511#324549511#0(0"0(0#0#48"/Users/dougfritz/Desktop/WebSaver/WebSaverView.m8615235520#1087"    cd /Users/dougfritz/Desktop/WebSaver    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mtune=G5 -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/WebSaver.hmap -F/Users/dougfritz/Desktop/WebSaver/build/Debug -I/Users/dougfritz/Desktop/WebSaver/build/Debug/include -I/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/DerivedSources/ppc -I/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/DerivedSources -include /var/folders/++/++5rv+++6+0++4RjPqRgNE+-xyk/-Caches-/com.apple.Xcode.129004/SharedPrecompiledHeaders/WebSaver_Prefix-gxsqwgurcwjcagezcxlyefkkmijb/WebSaver_Prefix.pch -c /Users/dougfritz/Desktop/WebSaver/WebSaverView.m -o /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/ppc/WebSaverView.o0#
+
+CCompileC build/WebSaver.build/Debug/WebSaver.build/Objects-normal/x86_64/WebSaverView.o /Users/dougfritz/Desktop/WebSaver/WebSaverView.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s324549510.702069
+e324549511.118859
+r1
+xCompileC
+xbuild/WebSaver.build/Debug/WebSaver.build/Objects-normal/x86_64/WebSaverView.o
+x/Users/dougfritz/Desktop/WebSaver/WebSaverView.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@56"Compile /Users/dougfritz/Desktop/WebSaver/WebSaverView.m324549510#324549511#0(0"0(0#0#48"/Users/dougfritz/Desktop/WebSaver/WebSaverView.m8606161280#1086"    cd /Users/dougfritz/Desktop/WebSaver    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/WebSaver.hmap -F/Users/dougfritz/Desktop/WebSaver/build/Debug -I/Users/dougfritz/Desktop/WebSaver/build/Debug/include -I/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/DerivedSources/x86_64 -I/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/DerivedSources -include /var/folders/++/++5rv+++6+0++4RjPqRgNE+-xyk/-Caches-/com.apple.Xcode.129004/SharedPrecompiledHeaders/WebSaver_Prefix-edjxlyschdzsaodspopxmwqjeuhw/WebSaver_Prefix.pch -c /Users/dougfritz/Desktop/WebSaver/WebSaverView.m -o /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/x86_64/WebSaverView.o0#
+
+CCopyStringsFile /Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s324549500.813953
+e324549501.027577
+r1
+xCopyStringsFile
+x/Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings324549500#324549501#0(0"0(0#0#65"/Users/dougfritz/Desktop/WebSaver/English.lproj/InfoPlist.strings8613837696#359"    cd /Users/dougfritz/Desktop/WebSaver    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-16 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver/Contents/Resources/English.lproj0#
+
+CCpResource build/Debug/WebSaver.saver/Contents/Resources/index.html index.html
+s324549805.035145
+e324549805.041514
+r1
+xCpResource
+xbuild/Debug/WebSaver.saver/Contents/Resources/index.html
+xindex.html
+lSLF07#2@15"Copy index.html324549805#324549805#0(0"0(0#0#44"/Users/dougfritz/Desktop/WebSaver/index.html8610856704#349"    cd /Users/dougfritz/Desktop/WebSaver    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/dougfritz/Desktop/WebSaver/index.html /Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver/Contents/Resources0#
+
+CCreateUniversalBinary /Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver/Contents/MacOS/WebSaver normal "x86_64 i386 ppc"
+s324549556.742816
+e324549556.754418
+r1
+xCreateUniversalBinary
+x/Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver/Contents/MacOS/WebSaver
+xnormal
+xx86_64 i386 ppc
+lSLF07#2@97"CreateUniversalBinary build/Debug/WebSaver.saver/Contents/MacOS/WebSaver normal "x86_64 i386 ppc"324549556#324549556#0(0"0(0#0#49"/Users/dougfritz/Desktop/WebSaver/x86_64 i386 ppc8613371552#476"    cd /Users/dougfritz/Desktop/WebSaver    /usr/bin/lipo -create /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/x86_64/WebSaver /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/i386/WebSaver /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/ppc/WebSaver -output /Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver/Contents/MacOS/WebSaver0#
+
+CLd /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/i386/WebSaver normal i386
+s324549556.570365
+e324549556.711948
+r1
+xLd
+x/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/i386/WebSaver
+xnormal
+xi386
+lSLF07#2@109"Link /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/i386/WebSaver324549556#324549556#0(0"0(0#0#0"8613792672#589"    cd /Users/dougfritz/Desktop/WebSaver    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch i386 -bundle -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/dougfritz/Desktop/WebSaver/build/Debug -F/Users/dougfritz/Desktop/WebSaver/build/Debug -filelist /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/i386/WebSaver.LinkFileList -mmacosx-version-min=10.6 -framework Cocoa -framework ScreenSaver -framework WebKit -o /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/i386/WebSaver0#
+
+CLd /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/ppc/WebSaver normal ppc
+s324549556.696115
+e324549556.742687
+r1
+xLd
+x/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/ppc/WebSaver
+xnormal
+xppc
+lSLF07#2@108"Link /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/ppc/WebSaver324549556#324549556#0(0"0(0#0#0"8613673824#586"    cd /Users/dougfritz/Desktop/WebSaver    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch ppc -bundle -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/dougfritz/Desktop/WebSaver/build/Debug -F/Users/dougfritz/Desktop/WebSaver/build/Debug -filelist /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/ppc/WebSaver.LinkFileList -mmacosx-version-min=10.6 -framework Cocoa -framework ScreenSaver -framework WebKit -o /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/ppc/WebSaver0#
+
+CLd /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/x86_64/WebSaver normal x86_64
+s324549556.569225
+e324549556.695924
+r1
+xLd
+x/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/x86_64/WebSaver
+xnormal
+xx86_64
+lSLF07#2@111"Link /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/x86_64/WebSaver324549556#324549556#0(0"0(0#0#0"8613910560#595"    cd /Users/dougfritz/Desktop/WebSaver    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -bundle -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/dougfritz/Desktop/WebSaver/build/Debug -F/Users/dougfritz/Desktop/WebSaver/build/Debug -filelist /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/x86_64/WebSaver.LinkFileList -mmacosx-version-min=10.6 -framework Cocoa -framework ScreenSaver -framework WebKit -o /Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/Objects-normal/x86_64/WebSaver0#
+
+CProcessInfoPlistFile /Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver/Contents/Info.plist Info.plist
+s324549500.810452
+e324549500.813875
+r1
+xProcessInfoPlistFile
+x/Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver/Contents/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist324549500#324549500#0(0"0(0#0#44"/Users/dougfritz/Desktop/WebSaver/Info.plist8615810336#203"    cd /Users/dougfritz/Desktop/WebSaver    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o /Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver/Contents/Info.plist0#
+
+CProcessPCH /var/folders/++/++5rv+++6+0++4RjPqRgNE+-xyk/-Caches-/com.apple.Xcode.129004/SharedPrecompiledHeaders/WebSaver_Prefix-edjxlyschdzsaodspopxmwqjeuhw/WebSaver_Prefix.pch.gch WebSaver_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s324549501.027704
+e324549507.182704
+r1
+xProcessPCH
+x/var/folders/++/++5rv+++6+0++4RjPqRgNE+-xyk/-Caches-/com.apple.Xcode.129004/SharedPrecompiledHeaders/WebSaver_Prefix-edjxlyschdzsaodspopxmwqjeuhw/WebSaver_Prefix.pch.gch
+xWebSaver_Prefix.pch
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@30"Precompile WebSaver_Prefix.pch324549501#324549507#0(0"0(0#0#53"/Users/dougfritz/Desktop/WebSaver/WebSaver_Prefix.pch8613619712#980"    cd /Users/dougfritz/Desktop/WebSaver    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/WebSaver.hmap -F/Users/dougfritz/Desktop/WebSaver/build/Debug -I/Users/dougfritz/Desktop/WebSaver/build/Debug/include -I/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/DerivedSources/x86_64 -I/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/DerivedSources -c /Users/dougfritz/Desktop/WebSaver/WebSaver_Prefix.pch -o /var/folders/++/++5rv+++6+0++4RjPqRgNE+-xyk/-Caches-/com.apple.Xcode.129004/SharedPrecompiledHeaders/WebSaver_Prefix-edjxlyschdzsaodspopxmwqjeuhw/WebSaver_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/++/++5rv+++6+0++4RjPqRgNE+-xyk/-Caches-/com.apple.Xcode.129004/SharedPrecompiledHeaders/WebSaver_Prefix-gxsqwgurcwjcagezcxlyefkkmijb/WebSaver_Prefix.pch.gch WebSaver_Prefix.pch normal ppc objective-c com.apple.compilers.gcc.4_2
+s324549507.182864
+e324549510.701931
+r1
+xProcessPCH
+x/var/folders/++/++5rv+++6+0++4RjPqRgNE+-xyk/-Caches-/com.apple.Xcode.129004/SharedPrecompiledHeaders/WebSaver_Prefix-gxsqwgurcwjcagezcxlyefkkmijb/WebSaver_Prefix.pch.gch
+xWebSaver_Prefix.pch
+xnormal
+xppc
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@30"Precompile WebSaver_Prefix.pch324549507#324549510#0(0"0(0#0#53"/Users/dougfritz/Desktop/WebSaver/WebSaver_Prefix.pch8613859136#984"    cd /Users/dougfritz/Desktop/WebSaver    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mtune=G5 -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/WebSaver.hmap -F/Users/dougfritz/Desktop/WebSaver/build/Debug -I/Users/dougfritz/Desktop/WebSaver/build/Debug/include -I/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/DerivedSources/ppc -I/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/DerivedSources -c /Users/dougfritz/Desktop/WebSaver/WebSaver_Prefix.pch -o /var/folders/++/++5rv+++6+0++4RjPqRgNE+-xyk/-Caches-/com.apple.Xcode.129004/SharedPrecompiledHeaders/WebSaver_Prefix-gxsqwgurcwjcagezcxlyefkkmijb/WebSaver_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/++/++5rv+++6+0++4RjPqRgNE+-xyk/-Caches-/com.apple.Xcode.129004/SharedPrecompiledHeaders/WebSaver_Prefix-hglxacbrtlsuqihkjkwtarnlwzdc/WebSaver_Prefix.pch.gch WebSaver_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s324549501.028657
+e324549507.426733
+r1
+xProcessPCH
+x/var/folders/++/++5rv+++6+0++4RjPqRgNE+-xyk/-Caches-/com.apple.Xcode.129004/SharedPrecompiledHeaders/WebSaver_Prefix-hglxacbrtlsuqihkjkwtarnlwzdc/WebSaver_Prefix.pch.gch
+xWebSaver_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@30"Precompile WebSaver_Prefix.pch324549501#324549507#0(0"0(0#0#53"/Users/dougfritz/Desktop/WebSaver/WebSaver_Prefix.pch8613523936#976"    cd /Users/dougfritz/Desktop/WebSaver    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/WebSaver.hmap -F/Users/dougfritz/Desktop/WebSaver/build/Debug -I/Users/dougfritz/Desktop/WebSaver/build/Debug/include -I/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/DerivedSources/i386 -I/Users/dougfritz/Desktop/WebSaver/build/WebSaver.build/Debug/WebSaver.build/DerivedSources -c /Users/dougfritz/Desktop/WebSaver/WebSaver_Prefix.pch -o /var/folders/++/++5rv+++6+0++4RjPqRgNE+-xyk/-Caches-/com.apple.Xcode.129004/SharedPrecompiledHeaders/WebSaver_Prefix-hglxacbrtlsuqihkjkwtarnlwzdc/WebSaver_Prefix.pch.gch0#
+
+CTouch /Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver
+s324549805.042330
+e324549805.045703
+r1
+xTouch
+x/Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver
+lSLF07#2@66"Touch /Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver324549805#324549805#0(0"0(0#0#0"8610400512#124"    cd /Users/dougfritz/Desktop/WebSaver    /usr/bin/touch -c /Users/dougfritz/Desktop/WebSaver/build/Debug/WebSaver.saver0#
+
